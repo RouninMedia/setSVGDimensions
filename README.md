@@ -3,22 +3,24 @@
 
 This is useful, not least, when drawing dynamically-resizable **SVG**s to **HTML5 Canvas**.
 
-If the **SVG** in question lacks a `viewBox` attribute, the function will apply to the **SVG**:
+### SVG with neither `viewBox`, `width` nor `height` attributes
+If the **SVG** in question lacks a `viewBox` attribute as well as `width` and `height` attributes, the function will apply to the **SVG**:
 
  - `width="200"`
  - `height="200"`
  
+ ### SVG with neither `width` nor `height` attributes
  If the **SVG** in question has a `viewBox` attribute but neither a `width` nor a `height` attribute, the function will apply to the **SVG**:
  
   - `width` derived from `viewBox`
   - `height` derived from `viewBox`
   
-  
+ ### SVG with `width` but no `height` attribute
  If the **SVG** in question has a `viewBox` attribute and a `width` attribute (but no `height` attribute), the function will apply to the **SVG**:
  
   - `height` derived from `width` multiplied by height/width ratio of `viewBox`
   
-  
+  ### SVG with `height` but no `width` attribute
  If the **SVG** in question has a `viewBox` attribute and a `height` attribute (but no `width` attribute), the function will apply to the **SVG**:
  
   - `width` derived from `height` divided by height/width ratio of `viewBox`
